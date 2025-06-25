@@ -1,16 +1,16 @@
-local pickers = require 'telescope.pickers'
-local finders = require 'telescope.finders'
-local conf = require('telescope.config').values
-
-local actions = require 'telescope.actions'
-local action_state = require 'telescope.actions.state'
-local action_utils = require 'telescope.actions.utils'
-
 local M = {}
 
 M.tests_to_run = nil
 
 function M.setup()
+  local pickers = require 'telescope.pickers'
+  local finders = require 'telescope.finders'
+  local conf = require('telescope.config').values
+
+  local actions = require 'telescope.actions'
+  local action_state = require 'telescope.actions.state'
+  local action_utils = require 'telescope.actions.utils'
+
   vim.keymap.set('n', '<leader>T', function()
     -- Need to find a way to get the name of the top-level crate
     -- local runnables = vim.lsp.buf_request_sync(0, 'experimental/discoverTest', {})
